@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,700&family=Figtree:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.13 0.04 245;
+    --foreground: 0.94 0.01 250;
+    --card: 0.18 0.04 245;
+    --card-foreground: 0.94 0.01 250;
+    --popover: 0.22 0.04 245;
+    --popover-foreground: 0.94 0.01 250;
+    --primary: 0.74 0.16 195;
+    --primary-foreground: 0.12 0.04 245;
+    --secondary: 0.24 0.05 245;
+    --secondary-foreground: 0.85 0.02 245;
+    --muted: 0.22 0.035 245;
+    --muted-foreground: 0.58 0.04 245;
+    --accent: 0.74 0.16 195;
+    --accent-foreground: 0.12 0.04 245;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.97 0 0;
+    --border: 0.28 0.04 245;
+    --input: 0.22 0.04 245;
+    --ring: 0.74 0.16 195;
+    --chart-1: 0.74 0.16 195;
+    --chart-2: 0.7 0.14 160;
+    --chart-3: 0.65 0.18 280;
+    --chart-4: 0.72 0.19 45;
+    --chart-5: 0.68 0.15 320;
+    --sidebar: 0.16 0.04 245;
+    --sidebar-foreground: 0.94 0.01 250;
+    --sidebar-primary: 0.74 0.16 195;
+    --sidebar-primary-foreground: 0.12 0.04 245;
+    --sidebar-accent: 0.24 0.05 245;
+    --sidebar-accent-foreground: 0.85 0.02 245;
+    --sidebar-border: 0.28 0.04 245;
+    --sidebar-ring: 0.74 0.16 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .glass {
+    background: oklch(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .dot-glow {
+    box-shadow: 0 0 12px 3px oklch(var(--primary) / 0.5);
+  }
+
+  .card-glow {
+    box-shadow: 0 4px 24px oklch(var(--primary) / 0.1);
+  }
+
+  .phone-frame {
+    max-width: 480px;
+    min-height: 100dvh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+}
